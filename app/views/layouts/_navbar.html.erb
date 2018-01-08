@@ -1,0 +1,7 @@
+<!-- should use helper --->
+<% if session[:user_id] != nil %>
+<% @user = User.find(session[:user_id]) %>
+<li> <%= link_to "Hello #{@user.name}!", user_path(@user) %> </li>
+<li><a href="/attractions">Attractions</a></li>
+<li><a data-method="delete" href="/signout" rel="nofollow">Log Out</a></li>
+<% end %>

@@ -7,6 +7,13 @@
     <%= csrf_meta_tags %>
     <%= analytics_init if Rails.env.production? %>
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"></link>
+    
+    <style>
+      td {
+        padding: 10px;
+      }
+    </style>
+    
   </head>
   <body>
     <!--  navbar -->
@@ -23,14 +30,20 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-           <!--  nav here -->
+            
+            <%= render "layouts/navbar" %>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </div>
 
+    <div id='flash' class='notice'>
+      <%= flash[:notice] %>
+    </div>
+    
     <!-- content -->
     <div class="container"  role="main">
+      
       <%= yield %>
     </div>
 

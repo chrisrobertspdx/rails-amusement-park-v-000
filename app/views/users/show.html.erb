@@ -1,0 +1,14 @@
+<h1><%= @user.name %></h1>
+
+<% if @user.admin %><p>ADMIN</p><% end %>
+<p>Tickets: <%= @user.tickets %></p>
+<p>Mood: <%= @user.mood %></p>
+<p>Height: <%= @user.height %> inches</p>
+
+<%= link_to "Edit", edit_user_path(@user) %><br>
+<%= link_to "See attractions", attractions_path %><br>
+<br>
+
+<%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
+  <input type=submit value='Sign Out'>
+<% end %>
